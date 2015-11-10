@@ -1,15 +1,15 @@
 {
   "name": "oats",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Test cases for OpenAssets",
+  "main": "main.js",
   "scripts": {
+    "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies":{
-    "bitcore":"~0.12.0",
-    "openassets":""
-    },
-  "author": "",
+    "request": "~2.65"
+  },
+  "author": "mzpolini",
   "license": "ISC"
 }
