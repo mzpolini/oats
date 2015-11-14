@@ -1,0 +1,26 @@
+{
+  "name": "oats",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies":{
+    "request":"~2.65"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mzpolini/oats.git"
+  },
+  "keywords": [
+    "openassets",
+    "bitcoin"
+  ],
+  "author": "mzpolini",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mzpolini/oats/issues"
+  },
+  "homepage": "https://github.com/mzpolini/oats"
+}
