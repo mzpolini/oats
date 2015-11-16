@@ -18,7 +18,8 @@ var app = angular.module('myApp', [])
       $scope.oapAddr = oapAddress;
       $scope.assetID = assetID;
       $scope.transactionHistory = viewAssetIDinfo;
-      // issueAsset();
+      $scope.metaData = getMeta(assetID);
+
       function fundAddress() {
         //curl -d '{"address": "BvUw6CKT5Ky1pvUbetnEDkd5wLaqbPe7YS", "amount": 100000}' https://api.blockcypher.com/v1/bcy/test/faucet?token=4eb1e48b0c88b8d3220adf101289c743
       };
@@ -31,6 +32,40 @@ var app = angular.module('myApp', [])
             // this callback will be called asynchronously
             // when the response is available
              return response.data
+          }, function errorCallback(response) {
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+            // $scope.displayAddress = "Error"
+          });
+      };
+      function putMeta(assetAddr, ) {
+        data = [{
+          "description":"Gold Coupon"
+        }]
+        $http({
+          method: 'PUT',
+          url: bcServiceBasePath + '/addrs/' + assetAddr + '/meta?token=' + bctoken
+        }).then(function successCallback(response) {
+            // this callback will be called asynchronously
+            // when the response is available
+             $scope.metaData = response.data.satoshi
+          }, function errorCallback(response) {
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+            // $scope.displayAddress = "Error"
+          });
+      };
+      function getMeta(assetAddr) {
+        $http({
+          method: 'GET',
+          url: bcServiceBasePath + '/addrs/' + assetAddr + '/meta?token=' + bctoken
+        }).then(function successCallback(response) {
+            // this callback will be called asynchronously
+            // when the response is available
+             $scope.metaData = response.data.satoshi
+
+
+
           }, function errorCallback(response) {
             // called asynchronously if an error occurs
             // or server returns response with an error status.
