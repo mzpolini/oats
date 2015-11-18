@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta name="description" content="">
+    <!-- <script src="app/controllers/network_controller.js"></script> -->
+  </head>
+  <body>
+    <h1><% = title %></h1>
+    <div ng-controller="assetCtrl">
+      <div id="main_asset_info" class="col-md-12">
+        <div class="col-md-4">
+          Main Address: <h5>{{walletAddr}}</h5><br>
+          OAP Address: <h5>{{oapAddr}}</h5><br>
+        </div>
+        <div class="col-md-4">
+          Original Balance<input type="text" ng-model="origBalance"><br>
+          Spent Balance<input type="text" ng-model="spentBalance"><br>
+          Remaining Balance<input type="text" ng-model="addressBalance">
+          <button ng-click="getWalletAddr()"></button>
+        </div>
+        <div id="form_issueAsset" class="col-md-4">
+          Private Key <input type="text" ng-model="issuePK"><br>
+          Send to Asset <input type="text" ng-model="issueAddr"><br>
+          Amount to Issue <input type="text" ng-model="issueAmount"><br>
+          <button ng-click="issueAsset()">Issue New Asset</button>
+        </div>
+      </div>
+
+      <div id="main_asset_info" class="col-lg-5">
+        OA Asset ID<h5>{{assetID}}</h5><br>
+        transactionHistory <input type="text" ng-model="transactionHistory"><br>
+      </div>
+      <div id="asset_meta_info" class="col-lg-5">
+        Meta Data<h5>{{metaData}}</h5>
+      </div>
+    </div>
+<script src="/lib/angular/angular.js"></script>
+</body>
+
+</html>
