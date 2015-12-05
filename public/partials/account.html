@@ -1,0 +1,32 @@
+<div class="container-fluid">
+  <div class="row">
+    <div ng-controller="networkCtrl">
+      <div class="col-md-4">
+        Network Info: <h5>{{bcServiceBasePath}}</h5><br>
+        <!-- OAP Address: <h5>{{oapAddr}}</h5><br> -->
+      </div>
+    </div>
+
+    <div ng-controller="accountCtrl">
+      <div id="main_asset_info" class="col-md-12">
+        <div class="col-md-4">
+          Original Address: <h5>{{ogAddress}}</h5><br>
+          <!-- OAP Address: <h5>{{oapAddr}}</h5><br> -->
+        </div>
+      </div>
+    </div>
+
+    <div ng-controller="addressCtrl">
+      <div id="main_address_info" class="col-md-12">
+        <div class="col-md-4">
+          <input ng-model="customAddr">
+          <button ng-click="queryAddress('BvUw6CKT5Ky1pvUbetnEDkd5wLaqbPe7YS')">Look up</button>
+          <h5>{{addressBalance}}</h5><br>
+          {{origBalance}}
+          {{spentBalance}}
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
