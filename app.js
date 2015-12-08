@@ -6,10 +6,14 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var $http = require('http');
 
+
+
+
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -33,8 +37,14 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-// error handlers
+//Enable CORS
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
+// error handlers
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
@@ -56,6 +66,9 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
+
+
+
 
 
 module.exports = app;

@@ -14,7 +14,7 @@ couplingApp.config(['$routeProvider',
     $routeProvider.
       when('/account', {
         templateUrl: 'partials/account.html',
-        controller: 'accountCtrl'
+        controller: 'addressCtrl'
       }).
       when('/phones', {
         templateUrl: 'partials/phone-list.html',
